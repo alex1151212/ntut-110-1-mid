@@ -43,5 +43,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://alex1151212.github.io/ntut-110-1-mid/"
+  "homepage": "https://alex1151212.github.io/ntut-110-1-mid/",
+  "devDependencies": {
+    "sass": "^1.56.0"
+  }
 }
