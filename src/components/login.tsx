@@ -1,9 +1,13 @@
 import StickIcon from "../assets/icons/stick";
 import ArrowIcon from "../assets/icons/arrow";
-
+import React, { useState } from "react";
 interface IProps {}
 
 const Login: React.FC<IProps> = () => {
+  const [dropDown, setDropDown] = useState<boolean>(false);
+  const clickDropDown = () => {
+    setDropDown(!dropDown);
+  };
   return (
     <div className="login">
       <div className="login-title">
@@ -11,6 +15,7 @@ const Login: React.FC<IProps> = () => {
       </div>
       <div className="login-body">
         <div className="login-body-window">
+          <StickIcon></StickIcon>
           <div className="login-body-window-title">登入</div>
           <div className="login-body-window-enter">
             <form className="login-body-window-enter-from">
@@ -55,23 +60,38 @@ const Login: React.FC<IProps> = () => {
             </form>
             <div className="login-body-window-enter-others">
               <div className="login-body-window-enter-others-title">
-                其他登入方式
-                <ArrowIcon />
-              </div>
-              <div className="login-body-window-enter-others-button">
-                <div>
-                  <img src="" alt="" />
-                  <div></div>
-                </div>
-                <div>
-                  <img src="" alt="" />
-                  <div></div>
-                </div>
-                <div>
-                  <img src="" alt="" />
-                  <div></div>
+                <div
+                  className="login-body-window-enter-others-title-text"
+                  onClick={clickDropDown}
+                >
+                  其他登入方式
+                  <ArrowIcon />
                 </div>
               </div>
+              {dropDown == true ? (
+                <div className="login-body-window-enter-others-button">
+                  <div className="login-body-window-enter-others-button-background">
+                    <img src="" alt="" />
+                    <div className="login-body-window-enter-others-button-background-text">
+                      Facebook登入
+                    </div>
+                  </div>
+                  <div className="login-body-window-enter-others-button-background">
+                    <img src="" alt="" />
+                    <div className="login-body-window-enter-others-button-background-text">
+                      Google登入
+                    </div>
+                  </div>
+                  <div className="login-body-window-enter-others-button-background">
+                    <img src="" alt="" />
+                    <div className="login-body-window-enter-others-button-background-text">
+                      Apple登入
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <></>
+              )}
             </div>
           </div>
         </div>
