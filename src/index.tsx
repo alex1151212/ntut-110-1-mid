@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./styles/index.scss";
-import App from "./components/App";
-import Sample1 from "./components/sample1";
+import App from "./components/app";
+import Sample1 from "./components/login";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
