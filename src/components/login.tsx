@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import React, { useState } from "react";
 import StickIcon from "../assets/icons/stick";
 import StickLeftIcon from "../assets/icons/stickleft";
@@ -74,7 +76,7 @@ const Login: React.FC<IProps> = () => {
                   <ArrowIcon />
                 </div>
               </div>
-              {dropDown == true ? (
+              {dropDown === true ? (
                 <div className="login-body-window-enter-others-button">
                   <div className="login-body-window-enter-others-button-background">
                     <img src={fb} alt="fb" />

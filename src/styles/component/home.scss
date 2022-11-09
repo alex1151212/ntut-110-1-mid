@@ -95,8 +95,6 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 18px;
-    & > div {
-    }
     & > .card-hot {
       width: calc(100% / 4 - (28px * 3 / 4));
     }

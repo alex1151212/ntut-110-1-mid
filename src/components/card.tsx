@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import { useState, useEffect } from "react";
 import StrokeImage from "../assets/img/card/Stroke.png";
 import StarImage from "../assets/img/card/Star.png";

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import CarouselImage from "../assets/img/post/活動1.jpg";
 import FoodCarouselImage from "../assets/img/post/吃3.jpg";
 import Card, { CardType } from "./card";
