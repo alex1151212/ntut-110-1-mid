@@ -35,7 +35,14 @@ interface HotDataType {
   content: string;
   title: string;
 }
-interface FoodDataType {}
+interface FoodDataType {
+  previewImg: string;
+  img?: string;
+  type: CardType;
+  content: string;
+  rate: string;
+  title: string;
+}
 interface PostDataType {
   title: string;
   previewImg?: string;
@@ -52,14 +59,62 @@ const fakeHotData: HotDataType[] = [
 ];
 
 const fakeFoodData: FoodDataType[] = [
-  { previewImg: Food1, type: CardType.rate, content: "" },
-  { previewImg: Food2, type: CardType.rate, content: "" },
-  { previewImg: Food3, type: CardType.rate, content: "" },
-  { previewImg: Food4, type: CardType.rate, content: "" },
-  { previewImg: Food5, type: CardType.rate, content: "" },
-  { previewImg: Food6, type: CardType.rate, content: "" },
-  { previewImg: Food7, type: CardType.rate, content: "" },
-  { previewImg: Food8, type: CardType.rate, content: "" },
+  {
+    previewImg: Food1,
+    type: CardType.rate,
+    content: "",
+    rate: "4.6",
+    title: "123",
+  },
+  {
+    previewImg: Food2,
+    type: CardType.rate,
+    content: "",
+    rate: "4.6",
+    title: "123",
+  },
+  {
+    previewImg: Food3,
+    type: CardType.rate,
+    content: "",
+    rate: "4.6",
+    title: "123",
+  },
+  {
+    previewImg: Food4,
+    type: CardType.rate,
+    content: "",
+    rate: "4.6",
+    title: "123",
+  },
+  {
+    previewImg: Food5,
+    type: CardType.rate,
+    content: "",
+    rate: "4.6",
+    title: "123",
+  },
+  {
+    previewImg: Food6,
+    type: CardType.rate,
+    content: "",
+    rate: "4.6",
+    title: "123",
+  },
+  {
+    previewImg: Food7,
+    type: CardType.rate,
+    content: "",
+    rate: "4.6",
+    title: "123",
+  },
+  {
+    previewImg: Food8,
+    type: CardType.rate,
+    content: "",
+    rate: "4.6",
+    title: "123",
+  },
 ];
 
 const Home: React.FC<IProps> = () => {
@@ -153,7 +208,18 @@ const Home: React.FC<IProps> = () => {
           >
             <img src={FoodCarouselImage} alt="" />
           </div>
-          <div className="home-content-container"></div>
+          <div className="home-content-container">
+            {fakeFoodData.map((data) => (
+              <Card
+                img={data.previewImg}
+                type={data.type}
+                rate={data.rate}
+                title={data.title}
+                className="card-hot"
+                clickHandler={() => setShowPopup(data)}
+              />
+            ))}
+          </div>
         </div>
       </div>
       {showPopup !== null ? (
