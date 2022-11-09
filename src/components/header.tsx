@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 import EditIcon from "../assets/img/edit.png";
 import NotifyIcon from "../assets/img/notify.png";
@@ -10,6 +11,10 @@ interface IProps {}
 
 const Header: React.FC<IProps> = () => {
   const [isDrop, setIsDrop] = useState<boolean>(false);
+  const location = useLocation();
+  useEffect(() => {
+    console.log(location);
+  }, []);
   return (
     <div className="header">
       <div className="header-logo">Trahsu</div>
@@ -22,15 +27,22 @@ const Header: React.FC<IProps> = () => {
         </div>
       </div>
       <div className="header-buttons">
-        <div>
-          <img src={EditIcon} alt="" />
-        </div>
-        <div>
-          <img src={NotifyIcon} alt="" />
-        </div>
-        <div>
-          <img src={ProfileIcon} alt="" />
-        </div>
+        {location.pathname === "login" ? (
+          <>
+            <div>
+              <img src={EditIcon} alt="" />
+            </div>
+            <div>
+              <img src={NotifyIcon} alt="" />
+            </div>
+            <div>
+              <img src={ProfileIcon} alt="" />
+            </div>
+          </>
+        ) : (
+          <></>
+        )}
+
         <div
           onClick={() => setIsDrop(!isDrop)}
           className={`${isDrop ? "active" : ""}`}
