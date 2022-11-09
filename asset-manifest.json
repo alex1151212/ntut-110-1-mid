@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ntut-110-1-mid/static/css/main.f9373f57.css",
-    "main.js": "/ntut-110-1-mid/static/js/main.23f478d7.js",
+    "main.js": "/ntut-110-1-mid/static/js/main.82ead506.js",
     "static/media/吃3.jpg": "/ntut-110-1-mid/static/media/吃3.917e2d79292501b749b8.jpg",
     "static/media/出瓦.png": "/ntut-110-1-mid/static/media/出瓦.0db2fcf3077eecbb8697.png",
     "static/media/塞車 1.png": "/ntut-110-1-mid/static/media/塞車 1.5c80cf12ece8540bb485.png",
@@ -22,10 +22,10 @@
     "static/media/隔離 2.png": "/ntut-110-1-mid/static/media/隔離 2.f36243418f61b869fd7d.png",
     "index.html": "/ntut-110-1-mid/index.html",
     "main.f9373f57.css.map": "/ntut-110-1-mid/static/css/main.f9373f57.css.map",
-    "main.23f478d7.js.map": "/ntut-110-1-mid/static/js/main.23f478d7.js.map"
+    "main.82ead506.js.map": "/ntut-110-1-mid/static/js/main.82ead506.js.map"
   },
   "entrypoints": [
     "static/css/main.f9373f57.css",
-    "static/js/main.23f478d7.js"
+    "static/js/main.82ead506.js"
   ]
 }
