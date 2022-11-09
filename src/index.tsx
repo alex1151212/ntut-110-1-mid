@@ -7,7 +7,7 @@ import Login from "./components/login";
 import Post from "./components/post";
 import Home from "./components/home";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -15,7 +15,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <Header />
       <Routes>
         <Route path="/app" element={<App />} />
@@ -23,6 +23,6 @@ root.render(
         <Route path="/post" element={<Post />} />
         <Route path="/home" element={<Home />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
