@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import EditIcon from "../assets/img/edit.png";
 import NotifyIcon from "../assets/img/notify.png";
@@ -12,12 +12,16 @@ interface IProps {}
 const Header: React.FC<IProps> = () => {
   const [isDrop, setIsDrop] = useState<boolean>(false);
   const location = useLocation();
-  useEffect(() => {
-    console.log(location);
-  }, []);
+  const navigate = useNavigate();
   return (
     <div className="header">
-      <div className="header-logo">Trahsu</div>
+      <div
+        className="header-logo"
+        style={{ cursor: "pointer" }}
+        onClick={(e) => navigate("/home")}
+      >
+        Trahsu
+      </div>
       <div className="header-search-bar-wrapper">
         <div className="header-search-bar">
           <input type={"text"} placeholder="搜尋" />
@@ -27,20 +31,24 @@ const Header: React.FC<IProps> = () => {
         </div>
       </div>
       <div className="header-buttons">
-        {location.pathname === "login" ? (
+        {location.pathname === "/login" ? (
+          <></>
+        ) : (
           <>
             <div>
-              <img src={EditIcon} alt="" />
+              <img src={EditIcon} alt="" onClick={() => navigate("/post")} />
             </div>
             <div>
               <img src={NotifyIcon} alt="" />
             </div>
             <div>
-              <img src={ProfileIcon} alt="" />
+              <img
+                src={ProfileIcon}
+                alt=""
+                onClick={() => navigate("/login")}
+              />
             </div>
           </>
-        ) : (
-          <></>
         )}
 
         <div

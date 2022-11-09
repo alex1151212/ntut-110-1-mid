@@ -1,4 +1,7 @@
 .header {
+  z-index: 99;
+  position: fixed;
+  width: 100vw;
   display: flex;
   align-items: center;
   height: 57px;
@@ -73,7 +76,6 @@
       ul {
         display: flex;
         flex-direction: column;
-        // padding: 21px 20px 21px 20px;
       }
       li {
         list-style: none;

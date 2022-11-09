@@ -42,7 +42,7 @@ const Login: React.FC<IProps> = () => {
               </div>
               <div className="login-body-window-enter-from-logintext">
                 <div className="login-body-window-enter-from-logintext-title">
-                  常用信箱
+                  密碼
                 </div>
                 <div className="login-body-window-enter-from-logintext-help"></div>
               </div>
