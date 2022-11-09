@@ -2,11 +2,11 @@ import React from "react";
 
 function App() {
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{ backgroundColor: "rgba(189, 78, 199, 0.2)", height: "100vh" }}
+    >
       <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
         <a
           className="App-link"
           href="https://reactjs.org"
