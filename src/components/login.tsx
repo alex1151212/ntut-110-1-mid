@@ -10,9 +10,6 @@ const Login: React.FC<IProps> = () => {
   };
   return (
     <div className="login">
-      <div className="login-title">
-        <div className="login-title-text">Trahsu</div>
-      </div>
       <div className="login-body">
         <div className="login-body-window">
           <StickIcon></StickIcon>
