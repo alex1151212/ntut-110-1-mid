@@ -40,14 +40,30 @@ const Header: React.FC<IProps> = () => {
         {isDrop ? (
           <div className="header-buttons-dropdown">
             <ul>
-              <li>服務條款</li>
-              <li>常見問題</li>
-              <li>回報問題</li>
-              <li>徵才</li>
-              <li>商業合作</li>
-              <li>免費下載app</li>
-              <li>設定</li>
-              <li>登出</li>
+              <li>
+                <p>服務條款</p>
+              </li>
+              <li>
+                <p>常見問題</p>
+              </li>
+              <li>
+                <p>回報問題</p>
+              </li>
+              <li>
+                <p>徵才</p>
+              </li>
+              <li>
+                <p>商業合作</p>
+              </li>
+              <li>
+                <p>免費下載app</p>
+              </li>
+              <li>
+                <p>設定</p>
+              </li>
+              <li>
+                <p>登出</p>
+              </li>
             </ul>
           </div>
         ) : (

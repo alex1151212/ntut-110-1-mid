@@ -1,0 +1,107 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: 57px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #7b3d98;
+  padding: 0 25px 0 15px;
+
+  .header-logo {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    color: #fff;
+  }
+  .header-search-bar-wrapper {
+    flex: 1;
+    margin-left: 25px;
+    .header-search-bar {
+      display: flex;
+      align-items: center;
+      max-width: 620px;
+      height: 27px;
+      background: #fffbfb;
+      border-radius: 10px;
+
+      & > input {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        flex: 1;
+        height: 100%;
+        outline: none;
+        border: none;
+        background: #fffbfb;
+        border-radius: 10px;
+        padding-left: 13px;
+      }
+      & > input::placeholder {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        color: rgba(123, 61, 152, 0.6);
+      }
+      & > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 39px;
+        height: 27px;
+        background: rgba(123, 61, 152, 0.6);
+        border-radius: 10px;
+      }
+    }
+  }
+  .header-buttons {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    .header-buttons-dropdown {
+      position: absolute;
+      top: 57px;
+      right: -15px;
+      width: 129px;
+      background: #ffffff;
+      border-radius: 14px;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        // padding: 21px 20px 21px 20px;
+      }
+      li {
+        list-style: none;
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 0.1em;
+        padding-left: 15px;
+        color: #7b3d98;
+        p {
+          line-height: 42px;
+        }
+      }
+      li:hover {
+        border-radius: 14px;
+        background-color: #9376a0ab;
+      }
+    }
+
+    & > div {
+      transition: 0.5s;
+      cursor: pointer;
+    }
+
+    & > .active {
+      transform: rotate(180deg);
+    }
+  }
+}
