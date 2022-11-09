@@ -5,6 +5,23 @@
     justify-content: center;
     align-items: center;
     padding: 60px 0 60px 0;
+    .login-body-lefticon {
+      > svg {
+        fill: #ffffff;
+        position: absolute;
+        left: 46px;
+        top: 271px;
+      }
+    }
+    .login-body-righticon {
+      padding-left: 100px;
+      > svg {
+        fill: #ffffff;
+        position: absolute;
+        right: 106px;
+        top: 505px;
+      }
+    }
     .login-body-window {
       display: flex;
       flex-direction: column;
@@ -15,7 +32,7 @@
       background: rgba(123, 61, 152, 0.8);
       border-radius: 50px;
 
-      svg {
+      > svg {
         fill: rgba(123, 61, 152, 0.8);
         position: absolute;
         margin-left: 40px;
@@ -143,7 +160,7 @@
               cursor: pointer;
 
               color: #ffffff;
-              svg {
+              > svg {
                 position: relative;
                 margin: 0;
                 fill: #ffffff;
@@ -156,11 +173,23 @@
             flex-direction: column;
             gap: 22px;
             .login-body-window-enter-others-button-background {
+              display: flex;
+              position: relative;
+              justify-content: center;
+              align-items: center;
               height: 66px;
               background: #7b3d98;
               border-radius: 20px;
               cursor: pointer;
+              img {
+                position: absolute;
+                left: 0;
+                margin-left: 20px;
+                width: 59px;
+                height: 57px;
+              }
               .login-body-window-enter-others-button-background-text {
+                flex: 1;
                 font-family: "Roboto";
                 font-style: normal;
                 font-weight: 600;

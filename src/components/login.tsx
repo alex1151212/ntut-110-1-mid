@@ -1,6 +1,12 @@
-import StickIcon from "../assets/icons/stick";
-import ArrowIcon from "../assets/icons/arrow";
 import React, { useState } from "react";
+import StickIcon from "../assets/icons/stick";
+import StickLeftIcon from "../assets/icons/stickleft";
+import StickRightIcon from "../assets/icons/stickright";
+import ArrowIcon from "../assets/icons/arrow";
+import fb from "../assets/img/fb 1.png";
+import google from "../assets/img/google 1.png";
+import apple from "../assets/img/apple 1.png";
+
 interface IProps {}
 
 const Login: React.FC<IProps> = () => {
@@ -11,8 +17,11 @@ const Login: React.FC<IProps> = () => {
   return (
     <div className="login">
       <div className="login-body">
+        <div className="login-body-lefticon">
+          <StickLeftIcon />
+        </div>
         <div className="login-body-window">
-          <StickIcon></StickIcon>
+          <StickIcon />
           <div className="login-body-window-title">登入</div>
           <div className="login-body-window-enter">
             <form className="login-body-window-enter-from">
@@ -68,19 +77,19 @@ const Login: React.FC<IProps> = () => {
               {dropDown == true ? (
                 <div className="login-body-window-enter-others-button">
                   <div className="login-body-window-enter-others-button-background">
-                    <img src="" alt="" />
+                    <img src={fb} alt="fb" />
                     <div className="login-body-window-enter-others-button-background-text">
                       Facebook登入
                     </div>
                   </div>
                   <div className="login-body-window-enter-others-button-background">
-                    <img src="" alt="" />
+                    <img src={google} alt="google" />
                     <div className="login-body-window-enter-others-button-background-text">
                       Google登入
                     </div>
                   </div>
                   <div className="login-body-window-enter-others-button-background">
-                    <img src="" alt="" />
+                    <img src={apple} alt="apple" />
                     <div className="login-body-window-enter-others-button-background-text">
                       Apple登入
                     </div>
@@ -91,6 +100,9 @@ const Login: React.FC<IProps> = () => {
               )}
             </div>
           </div>
+        </div>
+        <div className="login-body-righticon">
+          <StickRightIcon />
         </div>
       </div>
     </div>
