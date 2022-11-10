@@ -8,11 +8,14 @@ import ArrowIcon from "../assets/icons/arrow";
 import fb from "../assets/img/fb 1.png";
 import google from "../assets/img/google 1.png";
 import apple from "../assets/img/apple 1.png";
+import { useNavigate } from "react-router-dom";
 
 interface IProps {}
 
 const Login: React.FC<IProps> = () => {
   const [dropDown, setDropDown] = useState<boolean>(false);
+  const navigate = useNavigate();
+
   const clickDropDown = () => {
     setDropDown(!dropDown);
   };
@@ -59,6 +62,7 @@ const Login: React.FC<IProps> = () => {
                 type="submit"
                 value="登入"
                 className="login-body-window-loginbutton"
+                onClick={()=>navigate('/home')}
               />
               <div className="login-body-window-enter-from-forget">
                 <div className="login-body-window-enter-from-forget-text">
