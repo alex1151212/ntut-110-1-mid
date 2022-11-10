@@ -1,5 +1,6 @@
 .login {
-  height: 100vh;
+  min-height: 100vh;
+  height: fit-content;
   .login-body {
     display: flex;
     height: 100%;
@@ -7,7 +8,7 @@
     justify-content: center;
     align-items: center;
     // margin-top: 54px;
-    padding: 60px 0 0 0;
+    padding: 100px 0 60px 0;
     .login-body-lefticon {
       position: absolute;
       left: 46px;
