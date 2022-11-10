@@ -40,7 +40,7 @@ const Card: React.FC<IProps> = ({
         {type === "normal" ? (
           <>
             <div className="card-preview-text">
-              <p>{title}</p>
+              <p>{title}......</p>
             </div>
             <div className="card-stroke-img">
               <img src={StrokeImage} alt="" />
@@ -48,7 +48,7 @@ const Card: React.FC<IProps> = ({
           </>
         ) : (
           <>
-            <div className="card-preview-title">{content}</div>
+            <div className="card-preview-title">{title}</div>
             <div className="card-rate">
               <p>{rate}</p>
               <img src={StarImage} alt="" />

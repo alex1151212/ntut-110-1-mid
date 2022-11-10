@@ -124,9 +124,9 @@
   .home-popup-mask {
     display: flex;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
     z-index: 10;
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     width: calc(100% - 200px);
@@ -134,7 +134,7 @@
     background: rgba(255, 255, 255, 0.8);
 
     .home-popup-window {
-      top: 0;
+      top: 100px;
       left: 0;
       position: relative;
       width: 985px;

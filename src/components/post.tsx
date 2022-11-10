@@ -2,20 +2,49 @@ import ArrowPurpleIcon from "../assets/img/arrowPurple.png";
 import VideoIcon from "../assets/img/video.png";
 import SmileIcon from "../assets/img/smile.png";
 import PhotoIcon from "../assets/img/photo.png";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 interface IProps {}
 
 const Post: React.FC<IProps> = () => {
+  const navigate = useNavigate();
+  const [barState, setBarState] = useState<string>("text");
   return (
     <>
       <div className="post">
         <div className="post-window">
           <div className="post-window-bar">
             <ul>
-              <li className="active">文章</li>
-              <li>圖片</li>
-              <li>影片</li>
-              <li>連結</li>
-              <li>發起投票</li>
+              <li
+                className={`${barState === "text" ? "active" : ""}`}
+                onClick={() => setBarState("text")}
+              >
+                文章
+              </li>
+              <li
+                onClick={() => setBarState("image")}
+                className={`${barState === "image" ? "active" : ""}`}
+              >
+                圖片
+              </li>
+              <li
+                onClick={() => setBarState("video")}
+                className={`${barState === "video" ? "active" : ""}`}
+              >
+                影片
+              </li>
+              <li
+                onClick={() => setBarState("link")}
+                className={`${barState === "link" ? "active" : ""}`}
+              >
+                連結
+              </li>
+              <li
+                onClick={() => setBarState("vote")}
+                className={`${barState === "vote" ? "active" : ""}`}
+              >
+                發起投票
+              </li>
             </ul>
           </div>
           <div className="post-window-select-bar">
@@ -51,9 +80,12 @@ const Post: React.FC<IProps> = () => {
               <img src={PhotoIcon} alt="" />
               <img src={VideoIcon} alt="" />
             </div>
-            <div className="post-window-buttons-step">
-              <div>取消</div>
-              <div>下一步</div>
+            <div
+              className="post-window-buttons-step"
+              style={{ cursor: "pointer" }}
+            >
+              <div onClick={() => navigate("/home")}>取消</div>
+              <div onClick={() => navigate("/home")}>下一步</div>
             </div>
           </div>
         </div>

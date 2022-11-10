@@ -16,6 +16,15 @@ import Hot6 from "../assets/img/post/card/hot/甜點 1.png";
 import Hot7 from "../assets/img/post/card/hot/image 3.png";
 import Hot8 from "../assets/img/post/card/hot/檢 1.png";
 
+import HotPost1 from "../assets/img/post/塞車.jpg";
+import HotPost2 from "../assets/img/post/隔離.png";
+import HotPost3 from "../assets/img/post/西門.jpg";
+import HotPost4 from "../assets/img/post/遊戲.jpg";
+import HotPost5 from "../assets/img/post/車.jpg";
+import HotPost6 from "../assets/img/post/甜點.jpg";
+// import HotPost7 from "../assets/img/post/image 3.jpg";
+import HotPost8 from "../assets/img/post/檢.jpg";
+
 import Food1 from "../assets/img/post/card/food/鬆餅 1.png";
 import Food2 from "../assets/img/post/card/food/雞.png";
 import Food3 from "../assets/img/post/card/food/嘎李.png";
@@ -24,6 +33,15 @@ import Food5 from "../assets/img/post/card/food/食堂.png";
 import Food6 from "../assets/img/post/card/food/出瓦.png";
 import Food7 from "../assets/img/post/card/food/蛋糕.png";
 import Food8 from "../assets/img/post/card/food/餃子.png";
+
+import FoodPost1 from "../assets/img/post/鬆餅.jpg";
+import FoodPost2 from "../assets/img/post/雞.jpg";
+import FoodPost3 from "../assets/img/post/嘎李.jpg";
+import FoodPost4 from "../assets/img/post/餐酒館.jpg";
+import FoodPost5 from "../assets/img/post/食堂.jpg";
+import FoodPost6 from "../assets/img/post/出瓦.jpg";
+import FoodPost7 from "../assets/img/post/蛋糕.jpg";
+import FoodPost8 from "../assets/img/post/餃子.jpg";
 
 import { useEffect, useState } from "react";
 
@@ -45,75 +63,132 @@ interface FoodDataType {
 }
 interface PostDataType {
   title: string;
-  previewImg?: string;
+  img?: string;
 }
 const fakeHotData: HotDataType[] = [
-  { previewImg: Hot1, type: CardType.normal, content: "", title: "123" },
-  { previewImg: Hot2, type: CardType.normal, content: "", title: "1234" },
-  { previewImg: Hot3, type: CardType.normal, content: "", title: "1234" },
-  { previewImg: Hot4, type: CardType.normal, content: "", title: "12345" },
-  { previewImg: Hot5, type: CardType.normal, content: "", title: "" },
-  { previewImg: Hot6, type: CardType.normal, content: "", title: "" },
-  { previewImg: Hot7, type: CardType.normal, content: "", title: "" },
-  { previewImg: Hot8, type: CardType.normal, content: "", title: "" },
+  {
+    previewImg: Hot1,
+    img: HotPost1,
+    type: CardType.normal,
+    content:
+      "國道1號汐止交流道近日接連傳出走山事故，高公局封閉五堵入口跟國1南下五堵至汐止主線，市府也於昨日晚間緊急提醒，希望民眾多利用替代道路或大眾交通工具，但根據即時影像監視器，汐止多路段一早便開始出現大量車潮，多個交通路口車滿為患，當地民眾也感嘆是「交通最黑暗的一天」。",
+    title: "連續山崩汐止一早湧大量車潮",
+  },
+  {
+    previewImg: Hot2,
+    img: HotPost2,
+    type: CardType.normal,
+    content: "",
+    title: "確診隔離11/14起縮至5天",
+  },
+  {
+    previewImg: Hot3,
+    img: HotPost3,
+    type: CardType.normal,
+    content: "",
+    title: "西門町當街捅殺！和女友吵架竟砍路人",
+  },
+  {
+    previewImg: Hot4,
+    img: HotPost4,
+    type: CardType.normal,
+    content: "",
+    title: "2022/10月 Switch 新遊戲推薦分享",
+  },
+  {
+    previewImg: Hot5,
+    img: HotPost5,
+    type: CardType.normal,
+    content: "",
+    title: "八斗子漁港休旅車落海 男子被救起無生命跡象",
+  },
+  {
+    previewImg: Hot6,
+    img: HotPost6,
+    type: CardType.normal,
+    content: "",
+    title: "10+間特色甜點店用質感風格打造午茶新風景",
+  },
+  {
+    previewImg: Hot7,
+    img: HotPost4,
+    type: CardType.normal,
+    content: "",
+    title: "2022秋冬新番動漫推薦！",
+  },
+  {
+    previewImg: Hot8,
+    img: HotPost8,
+    type: CardType.normal,
+    content: "",
+    title: "淡水版柬埔寨 26人求職慘遭囚禁餵毒打",
+  },
 ];
 
 const fakeFoodData: FoodDataType[] = [
   {
     previewImg: Food1,
+    img: FoodPost1,
     type: CardType.rate,
     content: "",
     rate: "4.6",
-    title: "123",
+    title: "九州鬆餅瓦芙",
   },
   {
     previewImg: Food2,
+    img: FoodPost2,
     type: CardType.rate,
     content: "",
     rate: "4.6",
-    title: "123",
+    title: "雞的專家",
   },
   {
     previewImg: Food3,
+    img: FoodPost3,
     type: CardType.rate,
     content: "",
     rate: "4.6",
-    title: "123",
+    title: "笑貓咖哩 咖哩飯專賣店",
   },
   {
     previewImg: Food4,
+    img: FoodPost4,
     type: CardType.rate,
     content: "",
     rate: "4.6",
-    title: "123",
+    title: "Last Order 餐酒館",
   },
   {
     previewImg: Food5,
+    img: FoodPost5,
     type: CardType.rate,
     content: "",
     rate: "4.6",
-    title: "123",
+    title: "春寅食堂",
   },
   {
     previewImg: Food6,
+    img: FoodPost6,
     type: CardType.rate,
     content: "",
     rate: "4.6",
-    title: "123",
+    title: "初瓦 台北捷運西門店",
   },
   {
     previewImg: Food7,
+    img: FoodPost7,
     type: CardType.rate,
     content: "",
     rate: "4.6",
-    title: "123",
+    title: "Lady M 旗艦店",
   },
   {
     previewImg: Food8,
+    img: FoodPost8,
     type: CardType.rate,
     content: "",
     rate: "4.6",
-    title: "123",
+    title: "有煎餃子館 北市寧波館",
   },
 ];
 
@@ -195,7 +270,10 @@ const Home: React.FC<IProps> = () => {
                 type={data.type}
                 title={data.title}
                 className="card-hot"
-                clickHandler={() => setShowPopup(data)}
+                clickHandler={() => {
+                  window.scrollTo(0, 54);
+                  setShowPopup(data);
+                }}
               />
             ))}
           </div>
@@ -216,7 +294,10 @@ const Home: React.FC<IProps> = () => {
                 rate={data.rate}
                 title={data.title}
                 className="card-hot"
-                clickHandler={() => setShowPopup(data)}
+                clickHandler={() => {
+                  window.scrollTo(0, 54);
+                  setShowPopup(data);
+                }}
               />
             ))}
           </div>
@@ -248,10 +329,10 @@ const Home: React.FC<IProps> = () => {
               </div>
               <div className="home-popup-content">
                 <div className="home-popup-content-title">
-                  {showPopup.title}
+                  {showPopup.title}!
                 </div>
                 <div className="home-popup-content-img">
-                  <img src={showPopup.previewImg} alt="" />
+                  <img src={showPopup.img} alt="" />
                 </div>
               </div>
             </div>
