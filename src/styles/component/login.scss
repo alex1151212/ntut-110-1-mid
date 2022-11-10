@@ -1,36 +1,38 @@
 .login {
   height: 100vh;
-
   .login-body {
     display: flex;
     height: 100%;
     background: rgba(189, 78, 199, 0.2);
     justify-content: center;
     align-items: center;
-    padding: 60px 0 60px 0;
+    // margin-top: 54px;
+    padding: 60px 0 0 0;
     .login-body-lefticon {
+      position: absolute;
+      left: 46px;
+      // top: 271px;
       > svg {
         fill: #ffffff;
-        position: absolute;
-        left: 46px;
-        top: 271px;
       }
     }
     .login-body-righticon {
-      padding-left: 100px;
+      // padding-left: 100px;
+      position: absolute;
+      right: 106px;
+      // top: 505px;
+
       > svg {
         fill: #ffffff;
-        position: absolute;
-        right: 106px;
-        top: 505px;
       }
     }
+
     .login-body-window {
       display: flex;
       flex-direction: column;
       width: 751px;
-      left: 265px;
-      top: 115px;
+      // left: 265px;
+      // top: 115px;
 
       background: rgba(123, 61, 152, 0.8);
       border-radius: 50px;
