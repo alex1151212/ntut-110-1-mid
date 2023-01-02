@@ -1,6 +1,6 @@
 @use "../rwd.module.scss" as rwd;
-.login {
-  .login-body {
+.signup {
+  .signup-body {
     display: flex;
     height: 100vh;
 
@@ -9,7 +9,7 @@
     align-items: center;
     padding: 100px 0 60px 0;
 
-    .login-body-lefticon {
+    .signup-body-lefticon {
       position: absolute;
       left: 46px;
       > svg {
@@ -17,12 +17,9 @@
         @include rwd.mobile {
           display: none;
         }
-        @include rwd.ipad {
-          display: none;
-        }
       }
     }
-    .login-body-righticon {
+    .signup-body-righticon {
       // padding-left: 100px;
       position: absolute;
       right: 106px;
@@ -33,13 +30,10 @@
         @include rwd.mobile {
           display: none;
         }
-        @include rwd.ipad {
-          display: none;
-        }
       }
     }
 
-    .login-body-window {
+    .signup-body-window {
       display: flex;
       flex-direction: column;
       width: 751px;
@@ -57,7 +51,7 @@
         margin-left: 40px;
         top: 0;
       }
-      .login-body-window-title {
+      .signup-body-window-title {
         padding-top: 60px;
         font-family: "Roboto";
         font-style: normal;
@@ -68,18 +62,18 @@
         letter-spacing: 0.25em;
         color: #ffffff;
       }
-      .login-body-window-enter {
+      .signup-body-window-enter {
         display: flex;
         flex-direction: column;
         padding: 10px 70px 10px 70px;
-        .login-body-window-enter-from {
+        .signup-body-window-enter-from {
           display: flex;
           flex-direction: column;
-          .login-body-window-enter-from-logintext {
+          .signup-body-window-enter-from-signuptext {
             margin-top: 30px;
             display: flex;
             justify-content: space-between;
-            .login-body-window-enter-from-logintext-title {
+            .signup-body-window-enter-from-signuptext-title {
               padding-left: 30px;
               font-family: "Roboto";
               font-style: normal;
@@ -89,7 +83,7 @@
 
               color: #ffffff;
             }
-            .login-body-window-enter-from-logintext-help {
+            .signup-body-window-enter-from-signuptext-help {
               padding-right: 15px;
               font-family: "Roboto";
               font-style: normal;
@@ -100,13 +94,13 @@
               color: #ffffff;
             }
           }
-          .login-body-window-enter-from-input {
+          .signup-body-window-enter-from-input {
             display: flex;
             background: #fffcfc;
             border: 2px solid #7b3d98;
             height: 66px;
             border-radius: 20px;
-            .login-body-window-enter-from-input-enter {
+            .signup-body-window-enter-from-input-enter {
               width: 95%;
               margin-left: 30px;
               padding-right: 20px;
@@ -121,7 +115,7 @@
 
               color: #7b3d98;
             }
-            .login-body-window-enter-from-input-enter::placeholder {
+            .signup-body-window-enter-from-input-enter::placeholder {
               font-family: "Roboto";
               font-style: normal;
               font-weight: 500;
@@ -131,10 +125,10 @@
               color: #7b3d98;
             }
           }
-          .login-body-window-enter-wrapper {
+          .signup-body-window-enter-wrapper {
             display: flex;
             justify-content: space-between;
-            .login-body-window-enter-from-forget-text {
+            .signup-body-window-enter-from-forget-text {
               padding-top: 15px;
               font-family: "Roboto";
               font-style: normal;
@@ -147,7 +141,7 @@
             }
           }
         }
-        .login-body-window-loginbutton {
+        .signup-body-window-signupbutton {
           margin-top: 40px;
           height: 66px;
           background: #7b3d98;
@@ -163,14 +157,14 @@
           color: #ffffff;
           cursor: pointer;
         }
-        .login-body-window-enter-others {
+        .signup-body-window-enter-others {
           margin-top: 36px;
           margin-bottom: 30px;
           transition: 0.5s;
-          .login-body-window-enter-others-title {
+          .signup-body-window-enter-others-title {
             display: flex;
             justify-content: center;
-            .login-body-window-enter-others-title-text {
+            .signup-body-window-enter-others-title-text {
               font-family: "Roboto";
               font-style: normal;
               font-weight: 600;
@@ -188,12 +182,12 @@
               }
             }
           }
-          .login-body-window-enter-others-button {
+          .signup-body-window-enter-others-button {
             margin-top: 16px;
             display: flex;
             flex-direction: column;
             gap: 22px;
-            .login-body-window-enter-others-button-background {
+            .signup-body-window-enter-others-button-background {
               display: flex;
               position: relative;
               justify-content: center;
@@ -209,7 +203,7 @@
                 width: 59px;
                 height: 57px;
               }
-              .login-body-window-enter-others-button-background-text {
+              .signup-body-window-enter-others-button-background-text {
                 flex: 1;
                 font-family: "Roboto";
                 font-style: normal;

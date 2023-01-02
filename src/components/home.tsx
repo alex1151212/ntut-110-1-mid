@@ -44,6 +44,7 @@ import FoodPost7 from "../assets/img/post/蛋糕.jpg";
 import FoodPost8 from "../assets/img/post/餃子.jpg";
 
 import { useEffect, useState } from "react";
+import Header from "./header";
 
 interface IProps {}
 interface HotDataType {
@@ -65,6 +66,7 @@ interface PostDataType {
   title: string;
   img?: string;
 }
+
 const fakeHotData: HotDataType[] = [
   {
     previewImg: Hot1,
@@ -194,13 +196,38 @@ const fakeFoodData: FoodDataType[] = [
 
 const Home: React.FC<IProps> = () => {
   const [showPopup, setShowPopup] = useState<PostDataType | null>(null);
-  const [showData, setShowData] = useState<PostDataType | null>(null);
+  const [isLeftNavBarOpen, setIsLeftNavBarOpen] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  const handleRWD = () => {
+    if (window.innerWidth < 768) setIsMobile(true);
+    else setIsMobile(false);
+  };
+
   useEffect(() => {
-    console.log(showPopup);
-  }, [showPopup]);
+    window.addEventListener("resize", handleRWD);
+    return () => {
+      window.removeEventListener("resize", handleRWD);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) setIsLeftNavBarOpen(false);
+    else setIsLeftNavBarOpen(true);
+  }, [isMobile]);
+
   return (
     <div className="home">
-      <div className="home-left-nav-bar">
+      <Header
+        setLeftNavBar={setIsLeftNavBarOpen}
+        leftNavBar={isLeftNavBarOpen}
+      />
+      <div
+        className="home-left-nav-bar"
+        style={{
+          display: (isMobile && (isLeftNavBarOpen ? "block" : "none")) || "",
+        }}
+      >
         <ul>
           <li>
             <div></div>所有看板
@@ -280,6 +307,7 @@ const Home: React.FC<IProps> = () => {
         </div>
         <div className="home-content-food">
           <div>美食版</div>
+          <div></div>
           <div
             className="home-content-food-carousel"
             style={{ marginBottom: "44px" }}
@@ -293,7 +321,7 @@ const Home: React.FC<IProps> = () => {
                 type={data.type}
                 rate={data.rate}
                 title={data.title}
-                className="card-hot"
+                className="card-food"
                 clickHandler={() => {
                   window.scrollTo(0, 54);
                   setShowPopup(data);

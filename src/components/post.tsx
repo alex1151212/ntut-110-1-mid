@@ -4,6 +4,7 @@ import SmileIcon from "../assets/img/smile.png";
 import PhotoIcon from "../assets/img/photo.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import Header from "./header";
 interface IProps {}
 
 const Post: React.FC<IProps> = () => {
@@ -11,6 +12,7 @@ const Post: React.FC<IProps> = () => {
   const [barState, setBarState] = useState<string>("text");
   return (
     <>
+      <Header />
       <div className="post">
         <div className="post-window">
           <div className="post-window-bar">
@@ -84,8 +86,8 @@ const Post: React.FC<IProps> = () => {
               className="post-window-buttons-step"
               style={{ cursor: "pointer" }}
             >
-              <div onClick={() => navigate("/home")}>取消</div>
-              <div onClick={() => navigate("/home")}>下一步</div>
+              <div onClick={() => navigate("/")}>取消</div>
+              <div onClick={() => navigate("/")}>下一步</div>
             </div>
           </div>
         </div>

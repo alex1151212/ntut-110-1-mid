@@ -1,3 +1,5 @@
+@use "../rwd.module.scss" as rwd;
+
 .card {
   cursor: pointer;
   width: 100%;
@@ -31,6 +33,10 @@
         letter-spacing: 0.14em;
 
         color: #fefefe;
+
+        @include rwd.ipad {
+          font-size: 13px;
+        }
       }
     }
     .card-stroke-img {
@@ -73,5 +79,11 @@
       background: #ffffff;
       border-radius: 15px;
     }
+  }
+
+  @include rwd.mobile {
+    width: calc(100%);
+    font-size: 13px;
+    flex-direction: row;
   }
 }

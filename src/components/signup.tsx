@@ -18,12 +18,13 @@ import Header from "./header";
 
 interface IProps {}
 
-const Signup: React.FC<IProps> = () => {
+const Login: React.FC<IProps> = () => {
   const [dropDown, setDropDown] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [confrimPassword, setConfrimPassword] = useState("");
 
   const { user, setUser } = useAuth();
 
@@ -31,41 +32,29 @@ const Signup: React.FC<IProps> = () => {
     event.preventDefault();
     // 在這裡放置您的登入邏輯
     Axios({
-      url: "http://localhost:8000" + api.login.url(),
-      method: api.login.method,
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      url: "http://localhost:8000" + api.signup.url(),
+      method: api.signup.method,
       data: {
-        grant_type: "",
         username: username,
         password: password,
-        scope: "",
-        client_id: "",
-        client_secret: "",
+        email: "",
       },
     })
       .then((res) => {
-        const { access_token, user } = res.data;
-        localStorage.setItem("token", access_token);
+        navigate("/login");
 
-        setUser(user);
-
-        instance.defaults.headers.common["Authorization"] =
-          "Bearer " + access_token || "";
-
-        navigate("/");
-
-        // toast.success("🦄 Login Success!", {
-        //   position: "top-center",
-        //   hideProgressBar: false,
-        //   closeOnClick: true,
-        //   pauseOnHover: true,
-        //   draggable: true,
-        //   progress: undefined,
-        //   theme: "colored",
-        // });
+        toast.success("🦄 Signup Success!", {
+          position: "top-center",
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
       })
       .catch(() => {
-        toast.error("🦄 Login Error!", {
+        toast.error("🦄 Signup Error!", {
           position: "top-center",
           hideProgressBar: false,
           closeOnClick: true,
@@ -81,74 +70,89 @@ const Signup: React.FC<IProps> = () => {
     setDropDown(!dropDown);
   };
   return (
-    <div className="login">
+    <div className="signup">
       <Header />
-      <div className="login-body">
-        <div className="login-body-lefticon">
+      <div className="signup-body">
+        <div className="signup-body-lefticon">
           <StickLeftIcon />
         </div>
-        <div className="login-body-window">
+        <div className="signup-body-window">
           <StickIcon />
-          <div className="login-body-window-title">登入</div>
-          <div className="login-body-window-enter">
-            <form className="login-body-window-enter-from">
-              <div className="login-body-window-enter-from-logintext">
-                <div className="login-body-window-enter-from-logintext-title">
+          <div className="signup-body-window-title">登入</div>
+          <div className="signup-body-window-enter">
+            <form className="signup-body-window-enter-from">
+              <div className="signup-body-window-enter-from-signuptext">
+                <div className="signup-body-window-enter-from-signuptext-title">
                   使用者帳號
                 </div>
-                <div className="login-body-window-enter-from-logintext-help">
+                <div className="signup-body-window-enter-from-signuptext-help">
                   使用手機登入
                 </div>
               </div>
-              <div className="login-body-window-enter-from-input">
+              <div className="signup-body-window-enter-from-input">
                 <input
                   type="text"
                   placeholder="輸入"
-                  className="login-body-window-enter-from-input-enter"
+                  className="signup-body-window-enter-from-input-enter"
                   onChange={(e) => setUsername(e.currentTarget.value)}
                 />
               </div>
-              <div className="login-body-window-enter-from-logintext">
-                <div className="login-body-window-enter-from-logintext-title">
-                  密碼
+              <div className="signup-body-window-enter-from-signuptext">
+                <div className="signup-body-window-enter-from-signuptext-title">
+                  確認密碼
                 </div>
-                <div className="login-body-window-enter-from-logintext-help"></div>
+                <div className="signup-body-window-enter-from-signuptext-help"></div>
               </div>
-              <div className="login-body-window-enter-from-input">
+              <div className="signup-body-window-enter-from-input">
                 <input
                   type="password"
                   placeholder="輸入密碼"
-                  className="login-body-window-enter-from-input-enter"
+                  className="signup-body-window-enter-from-input-enter"
                   onChange={(e) => setPassword(e.currentTarget.value)}
                 />
               </div>
+              <div className="signup-body-window-enter-from-signuptext">
+                <div className="signup-body-window-enter-from-signuptext-title">
+                  密碼
+                </div>
+                <div className="signup-body-window-enter-from-signuptext-help"></div>
+              </div>
+              <div className="signup-body-window-enter-from-input">
+                <input
+                  type="password"
+                  placeholder="輸入密碼"
+                  className="signup-body-window-enter-from-input-enter"
+                  onChange={(e) => setConfrimPassword(e.currentTarget.value)}
+                />
+              </div>
+              {/* <div style={{ margin: "10px 0 0 10px" }}>Validation</div> */}
               <input
                 type="submit"
                 value="登入"
-                className="login-body-window-loginbutton"
+                className="signup-body-window-signupbutton"
                 onClick={(e) => {
                   handleSubmit(e);
                   navigate("/");
                 }}
               />
-              <div className="login-body-window-enter-wrapper">
+              <div className="signup-body-window-enter-wrapper">
                 <div
-                  className="login-body-window-enter-from-forget-text"
+                  className="signup-body-window-enter-from-forget-text"
                   onClick={() => {
-                    navigate("/signup");
+                    navigate("/login");
                   }}
                 >
-                  註冊
+                  登入
                 </div>
-                <div className="login-body-window-enter-from-forget-text">
+                <div className="signup-body-window-enter-from-forget-text">
                   忘記密碼？
                 </div>
               </div>
             </form>
-            <div className="login-body-window-enter-others">
-              <div className="login-body-window-enter-others-title">
+            <div className="signup-body-window-enter-others">
+              <div className="signup-body-window-enter-others-title">
                 <div
-                  className="login-body-window-enter-others-title-text"
+                  className="signup-body-window-enter-others-title-text"
                   onClick={clickDropDown}
                 >
                   其他登入方式
@@ -156,22 +160,22 @@ const Signup: React.FC<IProps> = () => {
                 </div>
               </div>
               {dropDown === true ? (
-                <div className="login-body-window-enter-others-button">
-                  <div className="login-body-window-enter-others-button-background">
+                <div className="signup-body-window-enter-others-button">
+                  <div className="signup-body-window-enter-others-button-background">
                     <img src={fb} alt="fb" />
-                    <div className="login-body-window-enter-others-button-background-text">
+                    <div className="signup-body-window-enter-others-button-background-text">
                       Facebook登入
                     </div>
                   </div>
-                  <div className="login-body-window-enter-others-button-background">
+                  <div className="signup-body-window-enter-others-button-background">
                     <img src={google} alt="google" />
-                    <div className="login-body-window-enter-others-button-background-text">
+                    <div className="signup-body-window-enter-others-button-background-text">
                       Google登入
                     </div>
                   </div>
-                  <div className="login-body-window-enter-others-button-background">
+                  <div className="signup-body-window-enter-others-button-background">
                     <img src={apple} alt="apple" />
-                    <div className="login-body-window-enter-others-button-background-text">
+                    <div className="signup-body-window-enter-others-button-background-text">
                       Apple登入
                     </div>
                   </div>
@@ -182,7 +186,7 @@ const Signup: React.FC<IProps> = () => {
             </div>
           </div>
         </div>
-        <div className="login-body-righticon">
+        <div className="signup-body-righticon">
           <StickRightIcon />
         </div>
       </div>
@@ -202,4 +206,4 @@ const Signup: React.FC<IProps> = () => {
   );
 };
 
-export default Signup;
+export default Login;
