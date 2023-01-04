@@ -31,7 +31,7 @@ const Signup: React.FC<IProps> = () => {
     event.preventDefault();
     // 在這裡放置您的登入邏輯
     Axios({
-      url: "http://localhost:8000" + api.login.url(),
+      url: "http://gjfruit.tk:8081" + api.login.url(),
       method: api.login.method,
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       data: {
