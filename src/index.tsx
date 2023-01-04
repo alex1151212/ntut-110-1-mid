@@ -20,7 +20,7 @@ root.render(
       <AuthProvider>
         <Routes>
           <Route element={<AuthLayout />}>
-            <Route path="/" element={<Home />} />
+            <Route path="/*" element={<Home />} />
             <Route path="/post" element={<Post />} />
           </Route>
           <Route path="/login" element={<Login />} />

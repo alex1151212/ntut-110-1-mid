@@ -4,8 +4,8 @@ import { useAuth } from "../hook/useAuth";
 export const AuthLayout = () => {
   const { user } = useAuth();
   const outlet = useOutlet();
-
-  if (!user) {
+  const token = localStorage.getItem("token");
+  if (!token) {
     return <Navigate to="/login" />;
   }
   return <>{outlet}</>;
