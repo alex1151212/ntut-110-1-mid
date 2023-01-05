@@ -32,7 +32,7 @@ const Login: React.FC<IProps> = () => {
     event.preventDefault();
     // 在這裡放置您的登入邏輯
     Axios({
-      url: "http://localhost:8000" + api.signup.url(),
+      url: "http://gjfruit.tk:8081" + api.signup.url(),
       method: api.signup.method,
       data: {
         username: username,
@@ -78,7 +78,7 @@ const Login: React.FC<IProps> = () => {
         </div>
         <div className="signup-body-window">
           <StickIcon />
-          <div className="signup-body-window-title">登入</div>
+          <div className="signup-body-window-title">註冊</div>
           <div className="signup-body-window-enter">
             <form className="signup-body-window-enter-from">
               <div className="signup-body-window-enter-from-signuptext">
@@ -86,7 +86,7 @@ const Login: React.FC<IProps> = () => {
                   使用者帳號
                 </div>
                 <div className="signup-body-window-enter-from-signuptext-help">
-                  使用手機登入
+                  使用手機註冊
                 </div>
               </div>
               <div className="signup-body-window-enter-from-input">
@@ -128,7 +128,7 @@ const Login: React.FC<IProps> = () => {
               {/* <div style={{ margin: "10px 0 0 10px" }}>Validation</div> */}
               <input
                 type="submit"
-                value="登入"
+                value="註冊"
                 className="signup-body-window-signupbutton"
                 onClick={(e) => {
                   handleSubmit(e);
@@ -142,7 +142,7 @@ const Login: React.FC<IProps> = () => {
                     navigate("/login");
                   }}
                 >
-                  登入
+                  註冊
                 </div>
                 <div className="signup-body-window-enter-from-forget-text">
                   忘記密碼？
@@ -155,7 +155,7 @@ const Login: React.FC<IProps> = () => {
                   className="signup-body-window-enter-others-title-text"
                   onClick={clickDropDown}
                 >
-                  其他登入方式
+                  其他註冊方式
                   <ArrowIcon />
                 </div>
               </div>
@@ -164,19 +164,19 @@ const Login: React.FC<IProps> = () => {
                   <div className="signup-body-window-enter-others-button-background">
                     <img src={fb} alt="fb" />
                     <div className="signup-body-window-enter-others-button-background-text">
-                      Facebook登入
+                      Facebook註冊
                     </div>
                   </div>
                   <div className="signup-body-window-enter-others-button-background">
                     <img src={google} alt="google" />
                     <div className="signup-body-window-enter-others-button-background-text">
-                      Google登入
+                      Google註冊
                     </div>
                   </div>
                   <div className="signup-body-window-enter-others-button-background">
                     <img src={apple} alt="apple" />
                     <div className="signup-body-window-enter-others-button-background-text">
-                      Apple登入
+                      Apple註冊
                     </div>
                   </div>
                 </div>

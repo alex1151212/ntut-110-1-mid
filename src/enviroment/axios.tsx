@@ -50,7 +50,7 @@ instance.interceptors.response.use(
 export { instance };
 
 // TODO remove below after changing all axios call from Axios to axios instance defined above
-axios.defaults.baseURL = process.env.BACKEND_URL;
+axios.defaults.baseURL = "http://gjfruit:8081";
 // axios.defaults.headers = {
 //   ...axios.config.headers,
 //   Authorization: localStorage.getItem("token")
